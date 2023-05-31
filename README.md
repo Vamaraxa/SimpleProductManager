@@ -16,4 +16,4 @@
 6. [TLS Certificates](docs/tls.md)
 7. [Using a Makefile](docs/makefile.md)
 8. [Troubleshooting](docs/troubleshooting.md)
-9. [About project](docs/phpDoc/api/index.html)
+9. [About project (phpDoc)](docs/phpDoc/api/index.html)
