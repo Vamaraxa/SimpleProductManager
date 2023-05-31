@@ -1,18 +1,9 @@
-index:
-   path: /
-   controller: App\Controller\ProductsController::index
-products.manage:
-   path: /products/manage
-   controller: App\Controller\ProductsController::manage
-products.add:
-   path: /products/add
-   controller: App\Controller\ProductsController::add
-products.edit:
-   path: /products/edit/{id}
-   controller: App\Controller\ProductsController::edit
-products.delete:
-   path: /products/delete/{id}
-   controller: App\Controller\ProductsController::delete
-products.publish:
-   path: /products/publish/{id}/{publish}
-   controller: App\Controller\ProductsController::publish
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+
+app_index:
+    path: /
+    controller: App\Controller\ProductController::index

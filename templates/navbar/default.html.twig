@@ -6,18 +6,18 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 p-0">
                 <li class="nav-item dropdown fw-bold">
-                    <a class="nav-link {% if app.request.get('_route') == 'index' %}active{% endif %}" href="{{ path('index') }}">Index</a>
+                    <a class="nav-link {% if app.request.get('_route') == 'app_index' %}active{% endif %}" href="{{ path('app_index') }}">Index</a>
                 </li>
                 {% if app.user %}
                 <li class="nav-item dropdown fw-bold">
-                    <a class="nav-link {% if app.request.get('_route') == 'products.manage' %}active{% endif %}" href="{{ path('products.manage') }}">Manage</a>
+                    <a class="nav-link {% if app.request.get('_route') == 'app_product_manage' %}active{% endif %}" href="{{ path('app_product_manage') }}">Manage</a>
                 </li>
                 {% endif %}
             </ul>
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 p-0">
                 <li class="d-flex align-items-center">
                     {% if app.user %}
-                        <span class="nav-link">{{ app.user.username }}</span>
+                        <span class="nav-link">{{ app.user.email }}</span>
                         <a class="nav-link" href="{{ path('app_logout') }}">Logout</a>
                     {% else %}
                         <a class="nav-link" href="{{ path('app_login') }}">Log In</a>

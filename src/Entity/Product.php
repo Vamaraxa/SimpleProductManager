@@ -2,55 +2,40 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Metadata\ApiResource;
 use App\Repository\ProductRepository;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity(repositoryClass=ProductRepository::class)
- */
+#[ORM\Entity(repositoryClass: ProductRepository::class)]
+#[ApiResource]
 class Product
 {
-    /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
-     */
-    private $id;
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column]
+    private ?int $id = null;
 
-    /**
-     * @ORM\Column(type="string", length=255, unique=true)
-     */
-    private $number;
+    #[ORM\Column(length: 255)]
+    private ?string $number = null;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $name;
+    #[ORM\Column(length: 255)]
+    private ?string $name = null;
 
-    /**
-     * @ORM\Column(type="float")
-     */
-    private $price;
+    #[ORM\Column]
+    private ?float $price = null;
 
-    /**
-     * @ORM\Column(type="float")
-     */
-    private $priceNet;
+    #[ORM\Column]
+    private ?float $priceNet = null;
 
-    /**
-     * @ORM\Column(type="float")
-     */
-    private $vat;
+    #[ORM\Column]
+    private ?float $vat = null;
 
-    /**
-     * @ORM\Column(type="text", nullable=true)
-     */
-    private $description;
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    private ?string $description = null;
 
-    /**
-     * @ORM\Column(type="boolean", nullable=true)
-     */
-    private $published;
+    #[ORM\Column(nullable: true)]
+    private ?bool $published = null;
 
     public function getId(): ?int
     {

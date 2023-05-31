@@ -1,0 +1,30 @@
+{{ form_start(form) }}
+    {{ form_errors(form) }}
+        <div class="form-group mb-3">
+            {{ form_row(form.name) }}
+        </div>
+        <div class="form-group mb-3">
+            {{ form_row(form.number) }}
+        </div>
+        <div class="form-group mb-3">
+            {{ form_row(form.price) }}
+        </div>
+        <div class="form-group mb-3">
+            {{ form_row(form.priceNet) }}
+        </div>
+        <div class="form-group mb-3">
+            {{ form_row(form.vat) }}
+        </div>
+        <div class="form-group mb-3">
+            <div class="form-check form-switch">
+                {{ form_row(form.published) }}
+            </div>
+        </div>
+        <div class="form-group mb-3">
+            {{ form_row(form.description) }}
+        </div>
+        <div class="form-group mb-3">
+            <button class="btn btn-success">{{ button_label|default('Save') }}</button>
+        </div>
+
+{{ form_end(form) }}
